@@ -35,6 +35,14 @@ services:
     networks:
       - jenkins
 
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"   # UI web
+      - "1025:1025"   # SMTP
+    networks:
+      - jenkins
+
 networks:
   jenkins:
     driver: bridge
